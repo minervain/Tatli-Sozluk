@@ -1,0 +1,13 @@
+@import '../Abstract/index.scss';
+
+
+.leaderboard{
+    background-color: $leaderboardbg;
+}
+.leaderBoardContain{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: $arkaplancolor;
+    height: 100vh;
+}
