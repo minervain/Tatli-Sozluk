@@ -1,10 +1,12 @@
 import React, {useState, useEffect} from "react";
-import ReactDOM from "react-dom";
+import Card from "./Card";
 
 function Post() {
     const [error, setError] = useState(null);
     const [isLoaded, setIsLoaded] = useState(false);
     const [postList, setPostList] = useState([]);
+    const [userList, setUserList] = useState([]);
+
 
     useEffect(() => {
         fetch("/posts")
@@ -21,6 +23,16 @@ function Post() {
             }
         )
     }, [])
+    useEffect(() => {
+        fetch("/users")
+        .then(res => res.json())
+        .then(
+            (result) => {
+            setUserList(result)
+            },)
+          
+        
+    }, [])
 
     if(error) {
         return <div> Error !!!</div>;
@@ -31,7 +43,7 @@ function Post() {
             <ul>
                 {postList.map(post => (
                     <li>
-                        {post.title} {post.text}
+                        <Card post={post} userList={userList}/>
                     </li>
                 ))}
             </ul>
