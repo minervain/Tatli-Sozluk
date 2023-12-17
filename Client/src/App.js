@@ -2,7 +2,7 @@ import {  Routes, Route } from "react-router-dom";
 import LeaderBoard from "./Pages/LeaderBoard";
 import Navbar from "./Components/Navbar";
 import Home from "./Pages/Home";
-import Post from "./Components/Post";
+import UserDetail from "./Pages/UserDetail.js";
 
 function App() {
   return (
@@ -12,6 +12,8 @@ function App() {
             <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/Leaderboard" element={<LeaderBoard />} />
+        <Route path="/userdetay/:id" element={<UserDetail />} />
+
       </Routes>
          </div>
   );

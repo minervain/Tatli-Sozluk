@@ -1,54 +1,29 @@
-import React, {useState, useEffect} from "react";
+import React from "react";
 import Card from "./Card";
+import '../Styles/Components/card.scss'
+import useDataFetch from "../hooks/useDataFetch";
 
 function Post() {
-    const [error, setError] = useState(null);
-    const [isLoaded, setIsLoaded] = useState(false);
-    const [postList, setPostList] = useState([]);
-    const [userList, setUserList] = useState([]);
-
-
-    useEffect(() => {
-        fetch("/posts")
-        .then(res => res.json())
-        .then(
-            (result) => {
-                setIsLoaded(true);
-                setPostList(result)
-            },
-            (error) => {
-                console.log(error)
-                setIsLoaded(true);
-                setError(error);
-            }
-        )
-    }, [])
-    useEffect(() => {
-        fetch("/users")
-        .then(res => res.json())
-        .then(
-            (result) => {
-            setUserList(result)
-            },)
-          
+   
         
-    }, [])
+    const { data: postData } = useDataFetch('/posts');
+  const { data: userData } = useDataFetch('/users');
 
-    if(error) {
-        return <div> Error !!!</div>;
-    } else if(!isLoaded) {
-        return <div> Loading... </div>;
-    } else {
+
+
+    
         return(
-            <ul>
-                {postList.map(post => (
-                    <li>
-                        <Card post={post} userList={userList}/>
+            <div className="postContain">
+            <ul className="postContain">
+                {postData.map(post => (
+                    <li key={post.id}> 
+                        <Card post={post} user={userData}  />
                     </li>
                 ))}
             </ul>
+            </div>
         );
     }
-}
+
 
 export default Post;

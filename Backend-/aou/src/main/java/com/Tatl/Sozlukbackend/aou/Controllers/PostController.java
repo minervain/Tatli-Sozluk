@@ -4,6 +4,7 @@ import com.Tatl.Sozlukbackend.aou.Services.PostService;
 import com.Tatl.Sozlukbackend.aou.entities.Post;
 import com.Tatl.Sozlukbackend.aou.request.PostCreateRequest;
 import com.Tatl.Sozlukbackend.aou.request.PostUpdateRequest;
+import com.Tatl.Sozlukbackend.aou.response.PostResponse;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -19,7 +20,7 @@ public class PostController {
     }
 
     @GetMapping
-    public List<Post> getAllPost(@RequestParam Optional<Long> userId){
+    public List<PostResponse> getAllPost(@RequestParam Optional<Long> userId){
         return postService.getAllPost(userId);
     }
     @PostMapping

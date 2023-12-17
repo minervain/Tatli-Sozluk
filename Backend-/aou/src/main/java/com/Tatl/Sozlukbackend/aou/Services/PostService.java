@@ -5,10 +5,12 @@ import com.Tatl.Sozlukbackend.aou.entities.User;
 import com.Tatl.Sozlukbackend.aou.repository.PostRepo;
 import com.Tatl.Sozlukbackend.aou.request.PostCreateRequest;
 import com.Tatl.Sozlukbackend.aou.request.PostUpdateRequest;
+import com.Tatl.Sozlukbackend.aou.response.PostResponse;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 @Service
 public class PostService {
@@ -23,10 +25,14 @@ public class PostService {
 
 
 
-    public List<Post> getAllPost(Optional<Long> userId) {
+    public List<PostResponse> getAllPost(Optional<Long> userId) {
+        List <Post> list;
         if(userId.isPresent())
-            return postRepository.findByUserId(userId.get());
-        return postRepository.findAll();
+             postRepository.findByUserId(userId.get());
+             list= postRepository.findAll();
+
+            return list.stream().map(p-> new PostResponse(p)).collect(Collectors.toList());
+
     }
 
 

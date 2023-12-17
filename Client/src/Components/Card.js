@@ -10,45 +10,58 @@ import Typography from '@mui/material/Typography';
 import { red } from '@mui/material/colors';
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import CommentIcon from '@mui/icons-material/Comment';
+import '../Styles/Components/card.scss';
+import image from '../assets/st.jpg';
+import Container from '@mui/material/Container';
+import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
+export default function RecipeReviewCard({ post }) {
 
+  
+  const [kalp, setKalp] = useState(false);
+  const navigate = useNavigate();
 
-export default function RecipeReviewCard({post,userList}) {
-  console.log(post)
-console.log(userList)
+  const handleAvatarClick = () => {
+    navigate(`/userdetay/${post.userId}`);
+  };
+
+  const handleLikeClick = () => {
+    setKalp(!kalp);
+  };
 
   return (
-    <Card sx={{ maxWidth: 345 }}>
-     <CardHeader
-  avatar={
-    <Avatar sx={{ bgcolor: red[500] }} aria-label="recipe">
-      R
-    </Avatar>
-  }
-
-  title={userList.username}
-/>
-      <CardMedia
-        component="img"
-        height="194"
-        image="/static/images/cards/paella.jpg"
-        alt="Paella dish"
-      />
-      <CardContent>
-        <Typography variant="body2" color="text.secondary">
-         {post.text}
-        </Typography>
-      </CardContent>
-      <CardActions disableSpacing>
-        <IconButton aria-label="add to favorites">
-          <FavoriteIcon />
-        </IconButton>
-        <IconButton aria-label="share">
-          <CommentIcon />
-        </IconButton>
-     ,
-      </CardActions>
-    
-    </Card>
+    <Container maxWidth="sm">
+      <div className='cardContain'>
+        <Card sx={{ maxWidth: 345, backgroundColor: 'pink' }} className='card'>
+          <CardHeader onClick={handleAvatarClick}
+            avatar={
+                <Avatar sx={{ bgcolor: red[200] }} aria-label="recipe" >
+                  {post.userName.charAt(0).toUpperCase()}
+                </Avatar>
+            }
+            title={post.userName}
+          />
+          <CardMedia component="img" height="194" image={image} alt="Paella dish" />
+          <CardContent>
+            <Typography variant="body2" color="text.secondary">
+              {post.text}
+            </Typography>
+          </CardContent>
+          <CardActions disableSpacing>
+            <IconButton
+              aria-label="add to favorites"
+              onClick={handleLikeClick}
+              style={{ color: kalp ? 'red' : 'gray' }}
+            >
+              <FavoriteIcon />
+            </IconButton>
+            <IconButton aria-label="share">
+              <CommentIcon />
+            </IconButton>
+          </CardActions>
+        </Card>
+      </div>
+    </Container>
   );
 }
