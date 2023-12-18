@@ -42,7 +42,6 @@ export default function RecipeReviewCard({ post }) {
             }
             title={post.userName}
           />
-          <CardMedia component="img" height="194" image={image} alt="Paella dish" />
           <CardContent>
             <Typography variant="body2" color="text.secondary">
               {post.text}

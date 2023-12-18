@@ -1,6 +1,6 @@
 import React from 'react'
 import { useParams } from 'react-router-dom'
-import useDataFetch from '../hooks/useDataFetch';
+import useDataFetch from '../Hooks/useDataFetch';
 
 function UserDetail() {
 
