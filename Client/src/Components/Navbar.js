@@ -20,7 +20,7 @@ function Navbar() {
             <Link to="/Leaderboard" className="hover:underline">
               Leaderboard
             </Link>
-            <Link to="#" className="hover:underline">
+            <Link to="/flow" className="hover:underline">
               Akış
             </Link>
           </nav>

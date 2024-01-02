@@ -1,0 +1,22 @@
+.flow {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 1rem;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+background-color: rgb(115, 255, 0);
+
+    .flowContainer {
+        min-width: 18rem;
+        padding: 2rem;
+        box-shadow: 2px solid;
+        box-sizing: border-box;
+
+
+    }
+}
+.flowContent{
+    overflow: scroll;
+
+}

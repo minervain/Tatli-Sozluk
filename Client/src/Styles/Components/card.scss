@@ -21,9 +21,9 @@
 }
 
 .card{
-    flex: 1 0 600px; /* 200px yerine istediğiniz genişliği belirleyebilirsiniz */
-    margin: 0.5rem; /* İstenilen boşluk miktarını belirleyebilirsiniz */
-    box-sizing: border-box; /* Kenarlıkların genişliği dahil edilmesi */
+    flex: 1 0 600px; 
+    margin: 0.5rem; 
+    box-sizing: border-box; 
     width: 38rem;
     height: 20rem;
     overflow-wrap: break-word;

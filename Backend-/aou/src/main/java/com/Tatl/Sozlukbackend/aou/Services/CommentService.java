@@ -44,19 +44,20 @@ public class CommentService {
     }
 
     public Comment createOneComment(CommentCreateRequest request) {
-        User user =userService.getOneUser(request.getUserId());
-        Post post=postService.getOnePost(request.getPostId());
-        if(user !=null && post!=null){
-            Comment commentToSave=new Comment();
-            commentToSave.setId(request.getId());
+        User user = userService.getOneUser(request.getUserId());
+        Post post = postService.getOnePost(request.getPostId());
+
+        if (user != null && post != null) {
+            Comment commentToSave = new Comment();
+
             commentToSave.setPost(post);
             commentToSave.setUser(user);
             commentToSave.setText(request.getText());
-            return commentRepository.save(commentToSave);
-        }
-        else
 
-        return null;
+            return commentRepository.save(commentToSave);
+        } else {
+            return null;
+        }
     }
 
     public Comment updateOneComment(Long commentId, CommentUpdateRequest commentUpdate) {

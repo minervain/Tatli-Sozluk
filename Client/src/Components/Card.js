@@ -16,6 +16,9 @@ import { useNavigate } from 'react-router-dom';
 import CommentForm from './Comment/CommentForm';
 import { Collapse } from '@mui/material';
 import Comment from './Comment/Comment';
+import Dialog from '@mui/material/Dialog';
+import DialogContent from '@mui/material/DialogContent';
+import DialogTitle from '@mui/material/DialogTitle';
 
 export default function RecipeReviewCard({ post }) {
 
@@ -29,9 +32,18 @@ export default function RecipeReviewCard({ post }) {
      const isInitialMount = React.useRef(true);
      const [likeId, setLikeId] = useState(null);
      const [commentList, setCommentList] = useState([]);
+     const [openCommentForm, setOpenCommentForm] = useState(false);
 
 
   const navigate = useNavigate();
+
+  const handleCommentIconClick = () => {
+    setOpenCommentForm(true);
+  };
+
+  const handleCloseCommentForm = () => {
+    setOpenCommentForm(false);
+  };
 
   const handleAvatarClick = () => {
     navigate(`/userdetay/${post.userId}`);
@@ -84,21 +96,25 @@ export default function RecipeReviewCard({ post }) {
             >
               <FavoriteIcon />
             </IconButton>
-            <IconButton aria-label="share">
+            <IconButton aria-label="share"  onClick={handleCommentIconClick}>
               <CommentIcon />
             </IconButton>
           </CardActions>
-          <Collapse in={expanded} timeout="auto" unmountOnExit>
-                   
-                    <Container fixed className =" {classes.container}">
-                    {error? "error" :
-                    isLoaded? commentList.map(comment => (
-                      <Comment userId = {1} userName = {"USER"} text = {comment.text}></Comment>
-                    )) : "Loading"}
-                    <CommentForm  userId = {1} userName = {"USER"} postId = {post.postId}></CommentForm>
-                    </Container>
-                </Collapse>
+       
         </Card>
-      </div>
+        <Dialog open={openCommentForm} onClose={handleCloseCommentForm}>
+        <DialogTitle>Add Comment</DialogTitle>
+        <DialogContent>
+          <CommentForm
+            userId={1}
+            userName={"USER"}
+            postId={post.postId}
+            post={post}
+
+            onClose={handleCloseCommentForm}
+          />
+        </DialogContent>
+      </Dialog>
+    </div>
   );
 }
