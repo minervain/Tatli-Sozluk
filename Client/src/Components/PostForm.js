@@ -8,7 +8,6 @@ import { red } from '@mui/material/colors';
 import '../Styles/Components/card.scss';
 import Container from '@mui/material/Container';
 import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
 import { Button, InputAdornment, OutlinedInput } from '@mui/material';
 
 export default function PostForm(props) {
@@ -69,10 +68,10 @@ export default function PostForm(props) {
   return (
     <Container maxWidth="sm">
       <div className='cardContain'>
-        <Card sx={{ maxWidth: 800, backgroundColor: 'pink' }} className='card'>
+        <Card sx={{ maxWidth: 1200}} className='card'>
           <CardHeader 
             avatar={
-                <Avatar sx={{ bgcolor: red[200] }} aria-label="recipe" >
+                <Avatar sx={{ bgcolor: 'darkblue' }} aria-label="recipe" >
                 </Avatar>
             }
             title={<OutlinedInput
@@ -92,7 +91,7 @@ export default function PostForm(props) {
           <CardContent>
             <Typography variant="body2" color="text.secondary">
             {<OutlinedInput
-            id='outlined-adorment-amount'
+            id='outlined-adorment-amount '
             multiline
             placeholder='Yorumla '
             inputProps={{maxLength:255}}
@@ -101,8 +100,8 @@ export default function PostForm(props) {
 
             endAdornment={
                 <InputAdornment position='end'>
-                <Button variant='contained'
-                onClick={handleSubmit}>Yorum yap</Button>
+                <Button className='btn text-white' style={{ color: 'white' }}
+                onClick={handleSubmit}>Paylaş</Button>
                 </InputAdornment>
             }
             

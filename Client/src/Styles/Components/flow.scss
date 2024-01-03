@@ -1,3 +1,6 @@
+@import '../Abstract/index.scss';
+
+
 .flow {
     display: flex;
     flex-wrap: wrap;
@@ -5,7 +8,7 @@
     justify-content: center;
     align-items: center;
     box-sizing: border-box;
-background-color: rgb(115, 255, 0);
+    background:$butoncolor;
 
     .flowContainer {
         min-width: 18rem;
@@ -16,7 +19,41 @@ background-color: rgb(115, 255, 0);
 
     }
 }
-.flowContent{
-    overflow: scroll;
+
+.flowDetay {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.imageDetay {
+    background-color: red;
+    position: relative;
+    width: 50%;
+    padding: 2em;
+
+    img {
+        width: 100%;
+    }
+
+}
+
+.tarifContain {
+    display: flex;
+    width: 100%;
+
+}
+
+.yemekAdi {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    padding: 2em;
+    overflow: hidden;
+
+    p {
+        word-wrap: break-word;
+        overflow-y: auto;
+    }
 
 }

@@ -2,15 +2,18 @@ import React from 'react'
 import '../Styles/Pages/Home.scss'
 import Post from '../Components/Post'
 import { Container } from '@mui/material'
+import Drawer from '../Components/Drawer/Drawer.js'
 
 function Home() {
   return (
-    <Container maxWidth="sm">
-
-    <div className='homeContain'>
-      <Post/>
+    <div className='Page'>
+    <Drawer/>
+      <Container maxWidth="sm">
+        <div className='homeContain'>
+          <Post />
+        </div>
+      </Container>
     </div>
-    </Container>
   )
 }
 

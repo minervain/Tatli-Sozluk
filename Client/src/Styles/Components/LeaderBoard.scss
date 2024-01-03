@@ -2,12 +2,12 @@
 
 
 .leaderboard{
-    background-color: $leaderboardbg;
+    background-color: $bgcolor;
 }
 .leaderBoardContain{
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: $arkaplancolor;
+    background: $bgcolor;
     height: 100vh;
 }

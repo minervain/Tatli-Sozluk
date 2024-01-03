@@ -5,6 +5,7 @@ import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 import '../Styles/Components/flow.scss';
+import { Link } from "react-router-dom";
 
 function Flow() {
   const [data, setData] = useState([]);
@@ -26,6 +27,7 @@ function Flow() {
       {data.map((post) => {
         return (
           <div key={post.idCategory} className='flow'>
+            <Link  to={`/flowDetay/${post.strCategory}`}>
             <Card sx={{ maxWidth: 345 }} className='flowContainer'>
               <CardMedia
                 sx={{
@@ -44,6 +46,7 @@ function Flow() {
             
               </CardContent>
             </Card>
+            </Link>
           </div>
         );
       })}

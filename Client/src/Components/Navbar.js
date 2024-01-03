@@ -6,7 +6,7 @@ import '../Styles/Components/Header.scss'
 function Navbar() {
   return (
     <div>
-      <header className= "text-white p-3 logo" >
+      <header className= "text-white p-3 logo font-semibold" >
         <div className="container mx-auto flex justify-between items-center">
           <div className="flex items-center">
             <img src={logo} alt="Logo" className=" w-10 h-10"  />
