@@ -1,7 +1,7 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
-import '../Styles/Components/flow.scss';
+import '../../Styles/Components/flow.scss';
 
 function FlowDetayTarif() {
 
@@ -26,14 +26,17 @@ function FlowDetayTarif() {
                 <img src={data.strMealThumb}></img>
             </div>
             <div className='yemekAdi'>
-                <h1>Yemek Adı :</h1>
+                <h1>Yemek Adı : {data.strMeal}</h1>
                 <h3>Tarif</h3>
-                <p>qwewqesdaaaaaaaaaaaaaaaaaaaaaqwewqesdaaaaaaaaaaaaa
-                    aaaaaaaaqwqwewqesdaaaaaaaaaaaaaaaaaaaaaqwewqesdaaaaaaaaaaaaaaaaaaaaaqwewqesdaaaaaaaaaaaaaaaaa
-                    aaaaqwewqesdaaaaaaaaaaaaaaaaaaaaaqwewqesdaaaaaaaaaaaaaaaaaaaaaqwewqesdaaaaaaaaaaaaaaaaaaaaaqwewqesdaaaaaaa
-                    aaaaaaaaaaaaaaewqesdaaaaaaaaaaaaaaaaaaaaaqwewqesdaaaaaaaaaaaaaaaaaaaaaqwewqesdaaaaaaaaaaa
-                    aaaaaaaaaaqwewqesdaaaaaaaaaaaaaaaaaaaaaqwewqesdaaaaaaaaaaaaaaaaaaaaa</p>
-                    <h3>Kaynaklar</h3>
+                <iframe
+                    title="YouTube Video"
+                    width="640"
+                    height="360"
+                    src="https://www.youtube.com/watch?v=6vxVgVubRPw"
+                    frameBorder="0"
+                    allowFullScreen
+                ></iframe>
+                <h3>Kaynaklar</h3>
             </div>
 
         </div>

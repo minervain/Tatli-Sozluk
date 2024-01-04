@@ -1,5 +1,5 @@
 import React from 'react';
-import '../Styles/Components/LeaderBoard.scss'
+import '../../Styles/Components/LeaderBoard.scss'
 
 const Leaderboard = () => {
  

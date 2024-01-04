@@ -13,22 +13,31 @@ function Navbar() {
             <span className="text-xl font-semibold">Tatlı Sözlük</span>
           </div>
 
-          <nav className="space-x-4">
-            <Link to="/" className="hover:underline">
+          <nav className="space-x-4 ">
+            <Link to="/" className="link-style">
               Anasayfa
             </Link>
-            <Link to="/Leaderboard" className="hover:underline">
+            <Link to="/Leaderboard" className="link-style"> 
               Leaderboard
             </Link>
-            <Link to="/flow" className="hover:underline">
-              Akış
+            <Link to="/flow" className="link-style">
+              Yemek
+            </Link>
+            <Link to="/haber" className="link-style">
+              Haber
+            </Link>
+            <Link to="/flow" className="link-style">
+              Spor
+            </Link>
+            <Link to="/flow" className="link-style">
+              Sağlık
             </Link>
           </nav>
           <div className="flex items-center space-x-4">
-            <Link to="#" className="hover:underline">
+            <Link to="#" className="link-style">
               Profil
             </Link>
-            <Link to="#" className="hover:underline">
+            <Link to="#" className="link-style">
               Ayarlar
             </Link>
             <button className="bg-white text-blue-500 px-4 py-2 rounded-full">

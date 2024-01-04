@@ -1,8 +1,8 @@
 import React from 'react'
-import '../Styles/Pages/Home.scss'
-import Post from '../Components/Post'
+import '../../Styles/Pages/Home.scss'
+import Post from '../../Components/Post.js'
 import { Container } from '@mui/material'
-import Drawer from '../Components/Drawer/Drawer.js'
+import Drawer from '../../Components/Drawer/Drawer.js'
 
 function Home() {
   return (

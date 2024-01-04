@@ -10,7 +10,7 @@ function Drawer() {
 
   return (
     <div className={`drawer-container ${show ? 'show' : ''}`}>
-      <input type="checkbox" id="drawer-toggle"  style={{ display: 'none' }} />
+      <input type="checkbox" id="drawer-toggle" style={{ display: 'none' }} />
       <label htmlFor="drawer-toggle" className="drawer-button">&#9776;</label>
       <div className="drawer">
         <label htmlFor="drawer-toggle" className="close-button" onClick={kapat}>&times;</label>

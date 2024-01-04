@@ -3,3 +3,19 @@
 
 background:$bgcolor;
 }
+
+.link-style {
+    color: #ffffff; 
+    text-decoration: none;
+    background: linear-gradient(to right, #ff8c00, #ff4500);
+    background-clip: text; 
+    -webkit-background-clip: text; 
+    transition: background-position 0.3s ease; 
+  }
+  
+  .link-style:hover {
+    background-size: 200% 100%; 
+    background-position: center;
+    background:$bgcolor;
+  }
+  

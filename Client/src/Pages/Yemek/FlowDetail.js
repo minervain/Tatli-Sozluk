@@ -8,7 +8,7 @@ import Typography from '@mui/material/Typography';
 import { CardActionArea } from '@mui/material';
 import { Link } from "react-router-dom";
 
-import '../Styles/Components/flow.scss';
+import '../../Styles/Components/flow.scss';
 
 function FlowDetail() {
     const { strCategory } = useParams();
@@ -18,7 +18,7 @@ function FlowDetail() {
         axios
             .get(`https://www.themealdb.com/api/json/v1/1/filter.php?c=${strCategory}`)
             .then((res) => {
-                setData(res.data.meals || []); // Ensure res.data.meals is not null
+                setData(res.data.meals || []);
             })
             .catch((error) => {
                 console.error('err=', error);
@@ -33,15 +33,15 @@ function FlowDetail() {
                 data.map((ctg) => (
                     <Link to={`/flowDetay/strCategory/${ctg.idMeal}`} key={ctg.idMeal}>
                         <div>
-                            <Card sx={{ maxWidth: 345 }}>
+                            <Card sx={{ maxWidth: 345}} className='cardFlow'>
                                 <CardActionArea>
                                     <CardMedia
-                                        component="img"
+                                        component="img"s
                                         height="140"
                                         image={ctg.strMealThumb}
                                     />
                                     <CardContent>
-                                        <Typography gutterBottom variant="h5" component="div">
+                                        <Typography gutterBottom variant="h5" component="div" style={{color:'white'}}>
                                             {ctg.strMeal}
                                         </Typography>
                                     </CardContent>
