@@ -1,5 +1,5 @@
 import { Avatar, Button, Card, CardContent, CardHeader, Container, InputAdornment, OutlinedInput, Typography } from '@mui/material';
-import React, { useState } from 'react';
+import { useState } from 'react';
 
 function CommentForm({ userId, postId, onClose }) {
   const [commentText, setCommentText] = useState('');
@@ -8,12 +8,10 @@ function CommentForm({ userId, postId, onClose }) {
     if (commentText.trim() === '') {
       return;
     }
-                         
-
 
     const commentData = {
-      userId: userId, 
-      postId: postId, 
+      userId: userId,
+      postId: postId,
       text: commentText,
     };
 
@@ -38,7 +36,7 @@ function CommentForm({ userId, postId, onClose }) {
     <Container maxWidth="sm">
       <div className='cardContain'>
         <Card sx={{ maxWidth: 800, backgroundColor: 'gray' }} className='card'>
-          <CardHeader 
+          <CardHeader
             avatar={<Avatar aria-label="recipe" />}
           />
           <CardContent>

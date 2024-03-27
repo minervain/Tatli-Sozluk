@@ -1,15 +1,22 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import logo from '../assets/Cupcake.png'
 import '../Styles/Components/Header.scss'
 
 function Navbar() {
+
+  const navigate=useNavigate();
+  const Yonlendir = () => {
+    navigate('/login  '); 
+
+  }
+
   return (
     <div>
-      <header className= "text-white p-3 logo font-semibold" >
+      <header className="text-white p-3 logo font-semibold" >
         <div className="container mx-auto flex justify-between items-center">
           <div className="flex items-center">
-            <img src={logo} alt="Logo" className=" w-10 h-10"  />
+            <img src={logo} alt="Logo" className=" w-10 h-10" />
             <span className="text-xl font-semibold">Tatlı Sözlük</span>
           </div>
 
@@ -17,7 +24,7 @@ function Navbar() {
             <Link to="/" className="link-style">
               Anasayfa
             </Link>
-            <Link to="/Leaderboard" className="link-style"> 
+            <Link to="/Leaderboard" className="link-style">
               Leaderboard
             </Link>
             <Link to="/flow" className="link-style">
@@ -40,7 +47,7 @@ function Navbar() {
             <Link to="#" className="link-style">
               Ayarlar
             </Link>
-            <button className="bg-white text-blue-500 px-4 py-2 rounded-full">
+            <button onClick={Yonlendir} className="bg-white text-blue-500 px-4 py-2 rounded-full">
               Giriş Yap
             </button>
           </div>

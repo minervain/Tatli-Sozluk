@@ -7,10 +7,13 @@ import Flow from "./Pages/Yemek/Flow.js";
 import FlowDetail from "./Pages/Yemek/FlowDetail.js";
 import FlowDetayTarif from "./Pages/Yemek/FlowDetayTarif.js";
 import Haber from "./Pages/Haber/Haber.js";
+import Login from "./Components/LoginPage/LoginPage.js";
+import Sign from "./Components/Sign/Sign.jsx";
 
 function App() {
   return (
     <div className="App">
+
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
@@ -20,6 +23,10 @@ function App() {
         <Route path="/flowDetay/:strCategory" element={<FlowDetail />} />
         <Route path="/flowDetay/strCategory/:id" element={<FlowDetayTarif />} />
         <Route path="/haber" element={<Haber />} />
+        <Route path="/signup" element={<Sign/>}/>
+        <Route path="/login" element={<Login />} />
+
+        
 
 
 

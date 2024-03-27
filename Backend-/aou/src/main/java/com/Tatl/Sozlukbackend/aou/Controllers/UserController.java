@@ -2,7 +2,6 @@ package com.Tatl.Sozlukbackend.aou.Controllers;
 
 import com.Tatl.Sozlukbackend.aou.Services.UserService;
 import com.Tatl.Sozlukbackend.aou.entities.User;
-import com.Tatl.Sozlukbackend.aou.repository.UserRepository;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
